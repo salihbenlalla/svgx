@@ -1,6 +1,6 @@
 {
   "name": "@svgx/vite-plugin-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "svgx vite plugin to import SVG files as react components",
   "keywords": [
     "rollup-plugin",
@@ -48,7 +48,7 @@
     "url": "https://github.com/salihbenlalla/svgx/issues"
   },
   "dependencies": {
-    "@svgx/core": "^1.0.0",
+    "@svgx/core": "^1.0.1",
     "vite": "^4.0.4"
   },
   "engines": {
