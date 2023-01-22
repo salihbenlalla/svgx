@@ -1,0 +1,68 @@
+{
+  "name": "@svgx/core",
+  "version": "0.0.0",
+  "description": "Transform SVG inputs into many outputs, especially \"HAST\" \"JSX\" and \"JS\".",
+  "keywords": [
+    "svg",
+    "svgx",
+    "core",
+    "qwik",
+    "qwik-city",
+    "react",
+    "vite",
+    "rollup",
+    "webpack"
+  ],
+  "author": "salih benlalla <salihbenlalla@gmail.com>",
+  "homepage": "https://github.com/salihbenlalla/svgx/blob/main/packages/core",
+  "license": "MIT",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js",
+      "default": "./lib/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salihbenlalla/svgx.git"
+  },
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && ./fixup.sh",
+    "build:esm": "tsc -p ./tsconfig.esm.json",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json",
+    "prepack": "npm run build"
+  },
+  "bugs": {
+    "url": "https://github.com/salihbenlalla/svgx/issues"
+  },
+  "dependencies": {
+    "svgo": "^3.0.2",
+    "astring": "^1.8.3",
+    "estraverse": "^5.3.0",
+    "@types/estree": "^1.0.0",
+    "hast-util-from-html": "^1.0.0",
+    "hast-util-to-estree": "^2.1.0",
+    "estree-util-to-js": "^1.1.0",
+    "estree-util-build-jsx": "^2.2.0",
+    "parse5": "~6.0.0"
+  },
+  "devDependencies": {
+    "@types/estraverse": "^5.1.2"
+  },
+  "engines": {
+    "node": ">=14.16"
+  }
+}

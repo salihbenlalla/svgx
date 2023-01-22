@@ -1,0 +1,57 @@
+{
+  "name": "@svgx/vite-plugin-qwik",
+  "version": "0.0.0",
+  "description": "svgx vite plugin to import SVG files as qwik components",
+  "keywords": [
+    "rollup-plugin",
+    "vite-plugin",
+    "svg",
+    "svgx",
+    "qwik",
+    "qwik-city",
+    "vite",
+    "rollup"
+  ],
+  "author": "salih benlalla <salihbenlalla@gmail.com>",
+  "homepage": "https://github.com/salihbenlalla/svgx/blob/main/packages/vite-plugin-qwik",
+  "license": "MIT",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js",
+      "default": "./lib/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salihbenlalla/svgx.git"
+  },
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && ./fixup.sh",
+    "build:esm": "tsc -p ./tsconfig.esm.json",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json",
+    "prepack": "npm run build"
+  },
+  "bugs": {
+    "url": "https://github.com/salihbenlalla/svgx/issues"
+  },
+  "dependencies": {
+    "@svgx/vite-plugin-react": "*",
+    "vite": "^4.0.4"
+  },
+  "engines": {
+    "node": ">=14.16"
+  }
+}

@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# compiled files
+packages/*/lib
+
+# idea
+.idea
+
+# tests
+**/__tests__
